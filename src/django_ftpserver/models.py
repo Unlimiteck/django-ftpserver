@@ -33,7 +33,7 @@ class FTPUserAccount(models.Model):
         get_user_model_path(), verbose_name=_("User"))
     group = models.ForeignKey(
         FTPUserGroup, verbose_name=_("FTP user group"), null=False,
-        blank=False)
+        blank=False, on_delete=models.CASCADE)
     last_login = models.DateTimeField(
         _("Last login"), editable=False, null=True)
     home_dir = models.CharField(
